@@ -1,0 +1,35 @@
+.presente{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tampa{
+    width: 100px;
+    height: 25px;
+    background-color: #7aa944;
+}
+
+.caixa{
+    width: 90px;
+    height: 60px;
+    background-color: #5c7e32;
+}
+
+.fitaV{
+    position: absolute;
+    background-color: red;
+    width: 15px;
+    height: 85px;
+    z-index: 2;
+}
+
+.fitaH{
+    position: absolute;
+    top: 40px;
+    background-color: rgba(255, 0, 0, 0.76);
+    width: 90px;
+    height: 15px;
+    z-index: 1;
+}
