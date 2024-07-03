@@ -1,4 +1,4 @@
-Doors (Monty Hall)
+Doors (Monty Hall) - https://doors-tau.vercel.app/
 
 Game to find the gift hidden in one of the many doors
 
@@ -8,6 +8,7 @@ Technology:
 
 Resources:
     - Direct/indirect communication between components
+    - Context API
     - Component state management
     - Dynamic API URL's
 

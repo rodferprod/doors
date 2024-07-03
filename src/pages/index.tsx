@@ -3,12 +3,16 @@ import Cartao from "../../components/Cartao";
 import styles from '../styles/Formulario.module.css'
 import EntradaNumerica from "../../components/EntradaNumerica";
 import { useState } from "react";
+import useAppData from "@/hook/useAppData";
 
 export default function Formulario() {
 
   const [qtdPortas, setQtdPortas] = useState(3)
   const [portaPresente, setPortaPresente] = useState(2)
+  const { resetVars } = useAppData()
 
+  resetVars()
+  
   return (
     <div className={styles.formulario}>
       <div>
@@ -26,7 +30,7 @@ export default function Formulario() {
       <div>
         <Cartao>
         <EntradaNumerica
-            text="Porta com presente?"
+            text="Porta com presente:"
             value={portaPresente}
             onChange={novaPortaPresente => setPortaPresente(novaPortaPresente)}
           />

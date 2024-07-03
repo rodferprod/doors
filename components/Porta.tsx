@@ -2,6 +2,7 @@
 import Presente from './Presente'
 import styles from '../src/styles/Porta.module.css'
 import PortaModel from '../model/porta'
+import useAppData from "@/hook/useAppData"
 
 
 interface PortaProps {
@@ -10,15 +11,23 @@ interface PortaProps {
 }
 
 export default function Porta(props: PortaProps){
+
+    const { marcaQueAcertou, marcaQuePerdeu } = useAppData()
+
     const porta = props.value
     
     const selecionada = porta.selecionada && !porta.aberta ? styles.selecionada : ''
 
     const alternarSelecao = () => props.onChange(porta.alternarSelecao())
     
-    const abrir = (e: any) => {
+    const abrir = async (e: any) => {
         e.stopPropagation()
         props.onChange(porta.abrir())
+        if(porta.temPresente) {
+            marcaQueAcertou(porta.temPresente)
+        } else {
+            marcaQuePerdeu()
+        }
     }
 
     function mostrarPorta(){
