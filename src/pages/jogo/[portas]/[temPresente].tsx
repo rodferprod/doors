@@ -46,11 +46,18 @@ export default function Jogo() {
             }}>Parabéns! Você acabou de ganhar um presente!</h1>
         )}
 
-        {perdeu && (
+        {perdeu && !acertou && (
             <h1 style={{
                 position: 'absolute',
                 top: '10%'
             }}>Desculpe, você não ganhou presente.</h1>
+        )}
+
+        {perdeu && acertou && (
+            <h1 style={{
+                position: 'absolute',
+                top: '10%'
+            }}>Reinicie para jogar novamente.</h1>
         )}
         
         <div className={styles.portas}>
